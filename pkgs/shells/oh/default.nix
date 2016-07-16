@@ -1,16 +1,16 @@
-{ stdenv, lib, buildGoPackage, fetchgit, fetchhg, fetchbzr, fetchsvn }:
+{ stdenv, lib, buildGoPackage, fetchgit }:
 
 buildGoPackage rec {
   name = "oh-${version}";
-  version = "20160522-${stdenv.lib.strings.substring 0 7 rev}";
-  rev = "0daaf4081475fb9d6b3801c85019bdd57b2ee9b4";
+  version = "20160714-${stdenv.lib.strings.substring 0 7 rev}";
+  rev = "a4133507a30c70e8609fb7491ccd982d0e3d4f50";
 
   goPackagePath = "github.com/michaelmacinnis/oh";
 
   src = fetchgit {
     inherit rev;
     url = "https://github.com/michaelmacinnis/oh";
-    sha256 = "0ajidzs0aisbw74nri9ks6sx6644nmwkisc9mvxm3f89zmnlsgwr";
+    sha256 = "0w3gnnanqxbii7gsgzy5p75y88mj83i76s8qn6jz04d09va9pimc";
   };
 
   goDeps = ./deps.json;
